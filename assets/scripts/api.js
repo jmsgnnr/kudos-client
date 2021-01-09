@@ -40,12 +40,19 @@ const signOut = function () {
       })
   }
 
-
-
+  const makeQuote = function (formData) {
+    console.log('data being sent to the server is', formData)
+    return $.ajax({
+      url: config.apiUrl + '/quotes/',
+      method: 'POST',
+      data: formData
+    })
+  }
 module.exports = {
 signUp,
 signIn,
 changePassword,
 signOut, 
+makeQuote
 
 }
