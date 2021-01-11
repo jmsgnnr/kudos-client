@@ -5,21 +5,22 @@
 
 section {
     text-align: center;
-    background-color:  rgb(246, 248, 100)
+    background-color:  rgb(255, 204, 0)
 }
 
 .unauthenticated{
-  border: ridge black 5px;
+  border: ridge rgb(0, 252, 8) 5px;
+
   font-family: 'Stencil Std', fantasy;
   text-align: center;
 background-color: rgb(250, 224, 77);
 border-radius: 5px;
-
+box-shadow: 8px 8px 8px 8px #ffee00;
 
 }
 
 .authenticated{
-  border: ridge rgb(243, 242, 242) 10px;
+  border: ridge rgb(242, 238, 0) 10px;
   font-family: 'Stencil Std', fantasy;
   text-align: center;
 background-color: rgb(7, 2, 2);
@@ -27,11 +28,15 @@ border-radius: 5px;
 
 }
 .head1{
+  display: flex;
+  flex-dirction: column;
+  height: 110px;
+  width:200px;
   font-family: 'Stencil Std', fantasy;
-  text-align: center;
+  text-align: center; 
   border : 10px ridge #2b2020;
-  box-shadow: 0px 8px 8px #161314;
-background : #1d7cf0;
+  box-shadow: 0px 8px 8px 20px #ff2870;
+background : #370aff;
 
 }
 .head2{
@@ -81,13 +86,13 @@ align-items: center ;
     justify-content: center;
     align-items: center;}
 h2 {
-    background-color: #7cb4ec;
+    background-color: #0011ff;
     color:#222223;
     padding:10px;
     font-family: 'Stencil Std', fantasy;
     text-align: center;
     // border-radius:5px;
-    box-shadow: 4px 4px 4px 4px  ;
+    box-shadow: 4px 4px 4px 4px #ff00e1  ;
 }
 
 .btn{
@@ -99,7 +104,7 @@ h2 {
     box-shadow: 4px 4px 4px 4px ;
     padding:5px;
     border-radius: 5px;
-font-family: Stencil Std, fantasy;
+font-family: 'Stencil Std', fantasy;
 }
 
 .card{
@@ -107,12 +112,12 @@ font-family: Stencil Std, fantasy;
     max-width:500px;
     max-height:300px;
     text-align: center;
-    background-color: #edddfd;
+    background-color: #5300a7;
     border-radius: 10px;
     border-top: #ebf5d4 5px;
     margin-top: 20px;
-  font-family: Stencil Std, fantasy;
-  box-shadow: 0px 4px 4px 3px pink;
+  font-family: 'Stencil Std', fantasy;
+  box-shadow: 3px 4px 4px 3px rgb(201, 237, 0);
     } 
 button:focus {outline: none;}
 
@@ -121,4 +126,11 @@ p{
   font-size: 20px;
 border-radius: 10px;
   border-top: 10px;
+}
+
+.quote {
+display: flex;
+justify-content: column;
+align-items: center;
+
 }
