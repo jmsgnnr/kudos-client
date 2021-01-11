@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../lib/get-form-fields')
+const randomGen = require('/randomGen.js')
 
 
 const onSignUp = function (event) {
@@ -42,6 +43,19 @@ api.signOut()
 .catch(ui.signOutFailure)
 }
 
+const onRandomGen = function(event){
+event.preventDefault()
+api.preventDefault
+api.newQuote()
+.then(ui.newQuoteSuccess)
+.catch(ui.newQuoteFailure)
+}
+const onGetQuotes = function (event){
+  event.preventDefault()
+  api.getQuotes()
+  .then(ui.getQuotesSuccess)
+}
+
 
 
 
@@ -52,6 +66,6 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-
+  onRandomGen,
+  onGetQuotes
 }
-

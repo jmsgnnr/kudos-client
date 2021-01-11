@@ -40,19 +40,31 @@ const signOut = function () {
       })
   }
 
-  const makeQuote = function (formData) {
+  const newQuote = function (formData) {
     console.log('data being sent to the server is', formData)
     return $.ajax({
-      url: config.apiUrl + '/quotes/',
+      url: config.apiUrl + '/quotes',
       method: 'POST',
       data: formData
     })
+    }
+
+    const getQuotes = function(){
+          return $.ajax({
+            url: config.apiUrl + '/quotes',
+            method: 'GET',
+            headers: {authorization: 'Token token=' + store.user.token},
+            data: {}
+
+          })
   }
+  
 module.exports = {
 signUp,
 signIn,
 changePassword,
 signOut, 
-makeQuote
+newQuote,
+getQuotes
 
 }

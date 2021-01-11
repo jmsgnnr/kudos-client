@@ -55,52 +55,53 @@ background-color: rgb(224, 187, 192);
   font-family:'JetBrains Mono', monospace;
 background-color: rgb(250, 237, 239);
 border-radius: 5px;
+}body {background-color: #8c1aff;}
+
+.content{
+    max-width: 600px;
+    padding:20px;
+    margin:auto;
+    justify-content: center;
+    align-items: center;}
+h2 {
+    background-color: #2f4de2;
+    color:#222223;
+    padding:10px;
+    font-family: Stencil Std, fantasy;
+    text-align: center;
+    border-radius:5px;
+    box-shadow: 4px 4px 4px 4px  ;
 }
 
+.btn{
+    height:50px;
+    width:150px;
+    font-size: 18px;
+  font-color: ;
+    background-color: #f3f73b;
+    box-shadow: 4px 4px 4px 4px ;
+    padding:5px;
+    border-radius: 5px;
+font-family: Stencil Std, fantasy;
+}
 
+.card{
+    padding:15px 30px 15px 30px;
+    max-width:500px;
+    max-height:300px;
+    text-align: center;
+    background-color: #c6a0ee;
+    border-radius: 10px;
+    border-top: #ebf5d4 5px;
+    margin-top: 20px;
+  font-family: Stencil Std, fantasy;
+  box-shadow: 0px 4px 4px 3px pink;
+    } 
+button:focus {outline: none;}
 
-// body {background-color: #8c1aff;}
-
-// .content{
-//     max-width: 600px;
-//     padding:20px;
-//     margin:auto;
-//     justify-content: center;
-//     align-items: center;}
-// h2 {
-//     background-color: #2f4de2;
-//     color:#yellow;
-//     padding:10px;
-//     font-family: arial;
-//     text-align: center;
-//     border-radius:5px;
-//     box-shadow: 4px 4px #ee9be4;
-// }
-
-// .btn{
-//     height:50px;
-//     width:150px;
-//     font-size: 18px;
-//     color:#edeeab;
-//     background-color: #ee9be4;
-//     box-shadow: 4px 4px #ec9db1;
-//     padding:5px;
-//     border-radius: 5px;}
-
-// .card{
-//     padding:15px 30px 15px 30px;
-//     max-width:500px;
-//     max-height:300px;
-//     text-align: center;
-//     background-color: #c6a0ee;
-//     border-radius: 5px;
-//     border-top: #ebf5d4 5px;
-//     margin-top: 20px;
-//     } 
-// button:focus {outline: none;}
-
-// p{
-//   font-family:Segoe UI;
-//   font-size: 20px;}
-
-// img{height:25px;width:25px;}
+p{
+  font-family: Stencil Std, fantasy;
+  font-size: 20px;
+border-radius: 10px;
+  border-top: 10px;
+}
