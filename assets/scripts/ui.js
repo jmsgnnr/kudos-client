@@ -1,9 +1,6 @@
 'use strict'
 const store = require('./store')
 
-
-
-
 const signUpSuccess = function (response) {
   $('#message').text('Signed Up Successfully! :)')
   
@@ -21,7 +18,7 @@ const signInSuccess = function (response) {
 $('.unauthenticated').hide()
 $('.authenticated').show()
 $('form').trigger('reset')
-
+$('.numBoard').show()
 }
 
 
@@ -56,28 +53,28 @@ $('form').trigger('reset')
 
 
   }
-  const newGameSuccess = function (games){
-    $('#message').text('New Game Success! Welcome :)')
+  const newQuoteSuccess = function quotes(){
+    $('#message').text('New Quote Success! Welcome :)')
     console.log(store)
-    $('.gameBoard').show()
+    $('.numBoard').show()
     $('.testing').hide()
     $('form').trigger('reset')
 
   }
-  const newGameFailure = function (error){
-    $('#message').text('new game failed wit error: ' + error.responseJSON.message)
-    $('form').trigger('reset')
+//   const newQuoteFailure = function (error){
+//     $('#message').text('new game failed wit error: ' + error.responseJSON.message)
+//     $('form').trigger('reset')
 
   
-}
-const getGamesSuccess = function (responseData) {
-  console.log(responseData)
-  const numberOfGamesPlayed = responseData.games.length
+// // }
+// const getQuotesSuccess = function (responseData) {
+//   console.log(responseData)
+//   const allQuotes = responseData.quotes.length
 
-  $('#message').text('Total Games Played: ' + numberOfGamesPlayed)
-    $('form').trigger('reset')
+//   $('#message').text("testttttt"  + allQuotes)
+//     $('form').trigger('reset')
 
-  }
+//   }
 
 
 
@@ -89,7 +86,8 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  newQuoteSuccess
  
 
   

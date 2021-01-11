@@ -10,7 +10,7 @@ const randomGen = require('./randomGen')
 
 $(() => {
   $('.authenticated').hide()
-  $('.gameBoard').hide()
+  $('.numBoard').hide()
   $('#sign-up').on('submit', preRandomGen.onSignUp)
   $('#sign-in').on('submit', preRandomGen.onSignIn)
   $('#change-password').on('submit', preRandomGen.onChangePassword)
@@ -19,6 +19,5 @@ $(() => {
 $('.testing').on('click', preRandomGen.onNewQuote)
 ////REMEMBER ( FOR YOUR FUNCTIONS)
 $('.numBoard').on('click', randomGen.randomMath())
-$('.getQuotes').on('click', preRandomGen.onGetQuotes)
-
+// $('.getQuotes').on('click', preRandomGen.onGetQuotes)
 })

@@ -5,14 +5,14 @@
 
 section {
     text-align: center;
-    background-color:  pink
+    background-color:  rgb(246, 248, 100)
 }
 
 .unauthenticated{
   border: ridge black 5px;
-  font-family:'JetBrains Mono', monospace;
+  font-family: 'Stencil Std', fantasy;
   text-align: center;
-background-color: pink;
+background-color: rgb(250, 224, 77);
 border-radius: 5px;
 
 
@@ -20,42 +20,59 @@ border-radius: 5px;
 
 .authenticated{
   border: ridge rgb(243, 242, 242) 10px;
-  font-family:'JetBrains Mono', monospace;
+  font-family: 'Stencil Std', fantasy;
   text-align: center;
 background-color: rgb(7, 2, 2);
 border-radius: 5px;
 
 }
 .head1{
-  font-family:'JetBrains Mono', monospace;
+  font-family: 'Stencil Std', fantasy;
   text-align: center;
   border : 10px ridge #2b2020;
   box-shadow: 0px 8px 8px #161314;
-background : #eeced1;
+background : #1d7cf0;
 
 }
 .head2{
-  font-family:'JetBrains Mono', monospace;
+  font-family: 'Stencil Std', fantasy;
   text-align: center;
   border : 10px ridge #2b2020;
   box-shadow: 0px 8px 8px #080707;
-background : #f0b3b8;
+background : #5faff5;
 }
 
 .game-title {
   box-shadow: 10 10 10 8px #090a02;
   border-radius : 5px;
   border-style: 10px 20px ridge ;
-background-color: rgb(224, 187, 192);
+background-color: rgb(211, 20, 160);
 }
 
 #message{
   text-align: center;
   border: 3px ridge;
-  font-family:'JetBrains Mono', monospace;
-background-color: rgb(250, 237, 239);
+  font-family: 'Stencil Std', fantasy;
+background-color: rgb(237, 238, 174);
 border-radius: 5px;
-}body {background-color: #8c1aff;}
+}
+
+body {
+background-color: #080707;
+display : flex ;
+flex-direction : column ;
+// justify-content: center; 
+align-items: center ;
+
+} 
+// .numBoard {
+// display: flex;
+// justify-content: column;
+// align-items: center;
+
+
+// }
+
 
 .content{
     max-width: 600px;
@@ -64,12 +81,12 @@ border-radius: 5px;
     justify-content: center;
     align-items: center;}
 h2 {
-    background-color: #2f4de2;
+    background-color: #7cb4ec;
     color:#222223;
     padding:10px;
-    font-family: Stencil Std, fantasy;
+    font-family: 'Stencil Std', fantasy;
     text-align: center;
-    border-radius:5px;
+    // border-radius:5px;
     box-shadow: 4px 4px 4px 4px  ;
 }
 
@@ -77,7 +94,7 @@ h2 {
     height:50px;
     width:150px;
     font-size: 18px;
-  font-color: ;
+    font: #2970ff ;
     background-color: #f3f73b;
     box-shadow: 4px 4px 4px 4px ;
     padding:5px;
@@ -90,7 +107,7 @@ font-family: Stencil Std, fantasy;
     max-width:500px;
     max-height:300px;
     text-align: center;
-    background-color: #c6a0ee;
+    background-color: #edddfd;
     border-radius: 10px;
     border-top: #ebf5d4 5px;
     margin-top: 20px;
@@ -100,7 +117,7 @@ font-family: Stencil Std, fantasy;
 button:focus {outline: none;}
 
 p{
-  font-family: Stencil Std, fantasy;
+  font-family: 'Stencil Std', fantasy;
   font-size: 20px;
 border-radius: 10px;
   border-top: 10px;

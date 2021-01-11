@@ -2,10 +2,15 @@
 
 
 let randomMath = function(){
+    
     let btn=document.querySelector('.btn');
+    // should real html from quote
+    // add user quote feature ?
+    // 
 btn.addEventListener('click', displayQuote);
 
 
+// Test array for quote list. 
 
 let quotes=[
 
