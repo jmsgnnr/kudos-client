@@ -15,6 +15,17 @@ btn.addEventListener('click', displayQuote);
 let quotes=[
 
     'you are special',
+    'you can rly do anything',
+    'seriously, remember this stuff',
+    'you can do anything you set your mind to',
+    'wow so smart, so cute',
+    'have you appreciated yourself today?',
+    ' meditate',
+    ' breathe',
+    ' you arent poor, you are pre-rich',
+    ' call your family today',
+    'you deserve a break',
+    ' do not be hard on yourself',
 ' you are rare',
 ' you are a champion',
 ' you are great ',
