@@ -1,4 +1,4 @@
-curl "http://localhost:4741/change-password" \
+curl "https://frozen-shore-45480.herokuapp.com/change-password" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
