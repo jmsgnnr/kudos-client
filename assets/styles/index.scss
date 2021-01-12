@@ -9,7 +9,7 @@ section {
 }
 
 .unauthenticated{
-  border: ridge rgb(0, 252, 8) 5px;
+  border: ridge #09070759 #bd7878 20px 1px;
 
   font-family: 'Stencil Std', fantasy;
   text-align: center;
@@ -99,7 +99,7 @@ h2 {
     height:50px;
     width:150px;
     font-size: 18px;
-    font: #2970ff ;
+    font: #eef3fd ;
     background-color: #f3f73b;
     box-shadow: 4px 4px 4px 4px ;
     padding:5px;
@@ -117,7 +117,7 @@ font-family: 'Stencil Std', fantasy;
     border-top: #ebf5d4 5px;
     margin-top: 20px;
   font-family: 'Stencil Std', fantasy;
-  box-shadow: 3px 4px 4px 3px rgb(201, 237, 0);
+  box-shadow: 3px 4px 4px 3px rgb(225, 233, 181);
     } 
 button:focus {outline: none;}
 
