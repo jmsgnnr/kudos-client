@@ -25,10 +25,10 @@ let quotes=[
 
 ];
 
-userQuotes = [],
+// userQuotes = [],
 
-userQuotes.length = 0 
-randomizerFunction(user.Quotes)
+// userQuotes.length = 0 
+// randomizerFunction(user.Quotes)
 // USE GETFORMFIELDS TO RUN CREATE FUNCT
 
 // CHANGE VAR FOR INDEX CODE BELOW 

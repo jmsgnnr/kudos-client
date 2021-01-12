@@ -5,17 +5,16 @@
 
 section {
     text-align: center;
-    background-color:  rgb(255, 204, 0)
+    background-color:  rgb(255, 255, 255)
 }
 
 .unauthenticated{
-  border: ridge #09070759 #bd7878 20px 1px;
-
-  font-family: 'Stencil Std', fantasy;
+  border: ridge #09070759 20px ;
+font-family: 'Stencil Std', fantasy;
   text-align: center;
-background-color: rgb(250, 224, 77);
+background-color: rgb(255, 104, 227);
 border-radius: 5px;
-box-shadow: 8px 8px 8px 8px #ffee00;
+box-shadow: 8px 8px 8px 8px #fff23c;
 
 }
 
@@ -25,17 +24,18 @@ box-shadow: 8px 8px 8px 8px #ffee00;
   text-align: center;
 background-color: rgb(7, 2, 2);
 border-radius: 5px;
-
+box-shadow: 8px 8px 8px 8px #06ccf8;
 }
+
 .head1{
   display: flex;
-  flex-dirction: column;
+  flex-direction: column;
   height: 110px;
   width:200px;
   font-family: 'Stencil Std', fantasy;
   text-align: center; 
   border : 10px ridge #2b2020;
-  box-shadow: 0px 8px 8px 20px #ff2870;
+  box-shadow: 8px 8px 8px 8px #f10957;
 background : #370aff;
 
 }
@@ -43,14 +43,14 @@ background : #370aff;
   font-family: 'Stencil Std', fantasy;
   text-align: center;
   border : 10px ridge #2b2020;
-  box-shadow: 0px 8px 8px #080707;
+  box-shadow: 4px 4px 4px 4px #02ff02;
 background : #5faff5;
 }
 
 .game-title {
   box-shadow: 10 10 10 8px #090a02;
   border-radius : 5px;
-  border-style: 10px 20px ridge ;
+  border-style: 10px ridge ;
 background-color: rgb(211, 20, 160);
 }
 
@@ -66,7 +66,7 @@ body {
 background-color: #080707;
 display : flex ;
 flex-direction : column ;
-// justify-content: center; 
+justify-content: center; 
 align-items: center ;
 
 } 
@@ -96,6 +96,8 @@ h2 {
 }
 
 .btn{
+  display : flex;
+  justify-content: center;
     height:50px;
     width:150px;
     font-size: 18px;
@@ -104,7 +106,7 @@ h2 {
     box-shadow: 4px 4px 4px 4px ;
     padding:5px;
     border-radius: 5px;
-font-family: 'Stencil Std', fantasy;
+    font-family: 'Stencil Std', fantasy;
 }
 
 .card{
@@ -117,7 +119,7 @@ font-family: 'Stencil Std', fantasy;
     border-top: #ebf5d4 5px;
     margin-top: 20px;
   font-family: 'Stencil Std', fantasy;
-  box-shadow: 3px 4px 4px 3px rgb(225, 233, 181);
+  box-shadow: 4px 4px 4px 4px rgb(225, 233, 181);
     } 
 button:focus {outline: none;}
 
@@ -134,3 +136,4 @@ justify-content: column;
 align-items: center;
 
 }
+
