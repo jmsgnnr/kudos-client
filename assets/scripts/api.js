@@ -3,7 +3,6 @@
 const config = require('./config')
 const store = require('./store')
 
-
 const signUp = function (formData) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -31,40 +30,40 @@ const changePassword = function (formData) {
   })
 }
 const signOut = function () {
-    return $.ajax({
-      url: config.apiUrl + '/sign-out',
-      method: 'DELETE',
-      headers: {
-        Authorization: 'Bearer '  + store.user.token
-      }
-      })
-  }
-
-  const newQuote = function (formData) {
-    console.log('data being sent to the server is', formData)
-    return $.ajax({
-      url: config.apiUrl + '/quotes',
-      method: 'POST',
-      data: formData
-    })
+  return $.ajax({
+    url: config.apiUrl + '/sign-out',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
     }
+  })
+}
 
-    const getQuotes = function(){
-          return $.ajax({
-            url: config.apiUrl + '/quotes',
-            method: 'GET',
-            headers: {authorization: 'Token token=' + store.user.token},
-            data: {}
+const newQuote = function (formData) {
+  console.log('data being sent to the server is', formData)
+  return $.ajax({
+    url: config.apiUrl + '/quotes',
+    method: 'POST',
+    data: formData
+  })
+}
 
-          })
-  }
-  
+const getQuotes = function () {
+  return $.ajax({
+    url: config.apiUrl + '/quotes',
+    method: 'GET',
+    headers: { authorization: 'Token token=' + store.user.token },
+    data: {}
+
+  })
+}
+
 module.exports = {
-signUp,
-signIn,
-changePassword,
-signOut, 
-newQuote,
-getQuotes
+  signUp,
+  signIn,
+  changePassword,
+  signOut,
+  newQuote,
+  getQuotes
 
 }

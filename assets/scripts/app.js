@@ -1,5 +1,5 @@
 'use strict'
-const preRandomGen= require('./preRandomGen')
+const preRandomGen = require('./preRandomGen')
 const randomGen = require('./randomGen')
 
 // use require with a reference to bundle the file and use it in this file
@@ -16,8 +16,8 @@ $(() => {
   $('#change-password').on('submit', preRandomGen.onChangePassword)
   $('.signOut').on('click', preRandomGen.onSignOut)
   $('#play').on('click', preRandomGen.onSignOut)
-$('.testing').on('click', preRandomGen.onNewQuote)
-////REMEMBER ( FOR YOUR FUNCTIONS)
-$('.numBoard').on('click', randomGen.randomMath())
+  $('.testing').on('click', preRandomGen.onNewQuote)
+  /// /REMEMBER ( FOR YOUR FUNCTIONS)
+  $('.numBoard').on('click', randomGen.randomMath())
 // $('.getQuotes').on('click', preRandomGen.onGetQuotes)
 })
