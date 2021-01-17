@@ -1,5 +1,5 @@
 
-const quotes = [
+const kudos = [
 
   'you are special',
   ' you are rare',
@@ -13,18 +13,18 @@ const quotes = [
 ]
 
 const btn = document.querySelector('.btn')
-btn.addEventListener('click', displayQuote)
+btn.addEventListener('click', displayKudo)
 
-function displayQuote () {
+function displayKudo () {
   // create an index of a random number
   // convert it into between 0 to length of quotes[]
-  const index = Math.floor(Math.random() * quotes.length)
+  const index = Math.floor(Math.random() * kudos.length)
 
   // display the quote of that index
-  const div = document.querySelector('#quote')
-  const quote = `<div class="card">
-<p>${quotes[index]}</p>
+  const div = document.querySelector('#kudo)
+  const kudo = `<div class="card">
+<p>${kudos[index]}</p>
  
 </div>`
-  div.innerHTML = quote
+  div.innerHTML = kudo
 }

@@ -2,16 +2,15 @@
 const store = require('./store')
 
 const signUpSuccess = function (response) {
-  $('.message').text('Signed Up Successfully! :)')
-  $('form').trigger('reset')
+  $('#message').text('Signed Up Successfully! :)')
 }
 const signUpFailure = function (error) {
   console.log(error)
-  $('.message').text('Sign Up FAILED :( with error: ' + error.responseJSON.message)
+  $('#message').text('Sign Up FAILED :( with error: ' + error.responseJSON.message)
 }
 
 const signInSuccess = function (response) {
-  $('.message').text('Sign In Success! Welcome :)')
+  $('#message').text('Sign In Success! Welcome :)')
   console.log(store)
   store.user = response.user
 
@@ -22,21 +21,21 @@ const signInSuccess = function (response) {
 }
 
 const signInFailure = function (error) {
-  $('.message').text('Sign In failed!!!!' + error.responseJSON.message)
+  $('#message').text('Sign In failed!!!!' + error.responseJSON.message)
   $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function () {
-  $('.message').text('Change password success! :)')
+  $('#message').text('Change password success! :)')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function (error) {
-  $('.message').text('Change password failed wit error: ' + error.responseJSON.message)
-
+  $('#message').text('Change password failed wit error: ' + error.responseJSON.message)
+  $('form').trigger('reset')
 }
 const signOutSuccess = function () {
-  $('.message').text('sign out success! :)')
+  $('#message').text('sign out success! :)')
   $('.unauthenticated').show()
   $('.authenticated').hide()
   $('.gameBoard').hide()
@@ -44,19 +43,18 @@ const signOutSuccess = function () {
   $('form').trigger('reset')
 }
 const signOutFailure = function () {
-  $('.message').text('Sign out failed!!! :(')
   console.log('hi')
-
+  $('form').trigger('reset')
 }
 const newQuoteSuccess = function quotes () {
-  $('.message').text('New Quote Success! Welcome :)')
+  $('#message').text('New Quote Success! Welcome :)')
   console.log(store)
   $('.numBoard').show()
   $('.testing').hide()
   $('form').trigger('reset')
 }
 //   const newQuoteFailure = function (error){
-//     $('.message').text('new game failed wit error: ' + error.responseJSON.message)
+//     $('#message').text('new game failed wit error: ' + error.responseJSON.message)
 //     $('form').trigger('reset')
 
 // // }
@@ -64,7 +62,7 @@ const newQuoteSuccess = function quotes () {
 //   console.log(responseData)
 //   const allQuotes = responseData.quotes.length
 
-//   $('.message').text("testttttt"  + allQuotes)
+//   $('#message').text("testttttt"  + allQuotes)
 //     $('form').trigger('reset')
 
 //   }

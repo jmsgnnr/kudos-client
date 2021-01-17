@@ -43,16 +43,39 @@ const onSignOut = function (event) {
 
 const onRandomGen = function (event) {
   event.preventDefault()
-  api.preventDefault
-  api.newQuote()
-    .then(ui.newQuoteSuccess)
-// .catch(ui.newQuoteFailure)
+  api.newKudo()
+    .then(ui.newKudoSuccess)
+// .catch(ui.newKudoFailure)
 }
-// const onGetQuotes = function (event){
-//   event.preventDefault()
-//   api.getQuotes()
-//   .then(ui.getQuotesSuccess)
+const onNewKudo = function (event){
+  event.preventDefault()
+  console.log('made it to events page')
+}
+// onGetKudo = function (event){
+// event.preventDefault()
+// console.log('made it to get Kudos')
+
 // }
+
+const onUpdateKudo = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const KudoData = getFormFields(form)
+  api.updateKudo(KudoData)
+    .then(ui.updateKudoSuccess)
+    .catch(ui.updateKudoFailure)
+}
+
+const onDeleteKudo = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const KudoData = getFormFields(form)
+  // console.log(KudoData)
+  // console.log(KudoData.Kudo)
+  api.deleteKudo(KudoData)
+    .then(ui.deleteKudoSuccess)
+    .catch(ui.deleteKudoFailure)
+}
 
 module.exports = {
 
@@ -60,6 +83,10 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onRandomGen
-  // onGetQuotes
+  onRandomGen,
+  onNewKudo,
+  onUpdateKudo,
+  onDeleteKudo,
+  // onGetKudo
+  // onGetKudos
 }

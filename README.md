@@ -17,8 +17,10 @@ Structuring the front end using the technologies listed above, I knew the logic 
 
 
 ## Links 
-- front end - https://jmsgnnr.github.io/kudos-client/
-- back end - https://frozen-shore-45480.herokuapp.com/
+
+- [Deployed Client](https://jmsgnnr.github.io/kudos-client/)
+- [Deployed API](https://frozen-shore-45480.herokuapp.com/)
+- [Back End Repo](https://github.com/jmsgnnr/kudos-back)
  
 
 

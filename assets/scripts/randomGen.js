@@ -1,16 +1,12 @@
 'use strict'
 
-const randomMath = function () {
+const randomizerMath = function () {
   const btn = document.querySelector('.btn')
   // should real html from quote
   // add user quote feature ?
-  //
-  btn.addEventListener('click', displayQuote)
-
-  // Test array for quote list.
-
-  const quotes = [
-
+  btn.addEventListener('click', displayKudo)
+// Test array for quote list.
+   const kudos = [
     'you are special',
     'you can rly do anything',
     'seriously, remember this stuff',
@@ -33,31 +29,25 @@ const randomMath = function () {
 
   ]
 
-  // userQuotes = [],
-
-  // userQuotes.length = 0
-  // randomizerFunction(user.Quotes)
-  // USE GETFORMFIELDS TO RUN CREATE FUNCT
-
-  // CHANGE VAR FOR INDEX CODE BELOW
-
-  function displayQuote () {
+function displayKudo () {
     // create an index of a random number
-    // convert it into between 0 to length of quotes[]
-    // randomizer function also same for userQuotes
-    const index = Math.floor(Math.random() * quotes.length)
+    // convert it into between 0 to length of Kudos[]
+    // randomizer function also same for userKudos
+    const index = Math.floor(Math.random() * kudos.length)
 
     // display the quote of that index
-    const div = document.querySelector('#quote')
-    const quote = `<div class="card">
-<p>${quotes[index]}</p>
+    const div = document.querySelector('#kudo')
+    const kudo = `<div class="card">
+<p>${kudos[index]}</p>
  
 </div>
  `
-    div.innerHTML = quote
+    div.innerHTML = kudo
+  }
+  module.exports = {
+    displayKudo
   }
 }
 module.exports = {
-  randomMath
-
+  randomizerMath
 }
