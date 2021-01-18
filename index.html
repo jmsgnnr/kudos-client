@@ -20,16 +20,19 @@
                       placeholder="email"
                       type="text"
                       name="credentials[email]"
+                      autocomplete="off"
                     />
                     <input
                       type="password"
                       placeholder="Enter password here"
                       name="credentials[password]"
+                      autocomplete="off"
                     />
                     <input
                       placeholder="Confirm password here"
                       type="password"
                       name="credentials[password_confirmation]"
+                      autocomplete="off"
                     />
                     <button type="submit">Sign Up</button>
                   </form>
@@ -39,11 +42,13 @@
                       placeholder="email"
                       type="text"
                       name="credentials[email]"
+                      autocomplete="off"
                     />
                     <input
                       placeholder="password"
                       type="password"
                       name="credentials[password]"
+                      autocomplete="off"
                     />
                     <button type="submit">Sign In</button>
                   </form>
@@ -54,11 +59,13 @@
                       placeholder="old password"
                       type="password"
                       name="passwords[old]"
+                      autocomplete="off"
                     />
                     <input
                       placeholder="new password"
                       type="password"
                       name="passwords[new]"
+                      autocomplete="off"
                     />
                     <button type="submit" >Change Password</button>
                     </form>          
@@ -69,18 +76,16 @@
                    </div>
                   
                    <body>
+                    <form id='newKudoForm'>
+                      <input type='text' placeholder='LEAVE $OME <3' name='kudo[kudos]'>
+                      <button type='submit' id='submitKudo'>ADD Kudo!</button>
+                    </form>
                     <div class="posiBot">
                         <div class="card">
                           <h2>NEED $UPPORT?</h2>
-                          <form id='newForm'>
-                            <input type='text' placeholder='LEAVE $OME <3'>
-                            <button type='submit' id='submitKudo'>ADD Kudo!</button>
-                          </form>
-                          <button id="btn" class="btn">GET RANDOM!</button>
+                       <button id="btn" class="btn">GET RANDOM!</button>
                         </div>
                         <div id="kudo"></div>
-                        
-
                         </form>
                     </div>
                 </body>
@@ -88,7 +93,6 @@
                     
                  
 
-    <script src="script.js"></script>
 </body>
 </html>
 

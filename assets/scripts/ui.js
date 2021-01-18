@@ -19,6 +19,7 @@ const signInSuccess = function (response) {
   $('.authenticated').show()
   $('form').trigger('reset')
   $('.posiBot').show()
+  $('#newKudoForm').show()
 }
 
 const signInFailure = function (error) {
@@ -47,11 +48,10 @@ const signOutFailure = function () {
   console.log('hi')
   $('form').trigger('reset')
 }
-const newKudoSuccess = function quotes () {
+
+const newKudoSuccess = function (responseData) {
   $('#message').text('New Kudo Success! Welcome :)')
-  console.log(store)
-  $('.posiBot').show()
-  $('.testing').hide()
+  console.log('this is response data inside of ui', responseData )
   $('form').trigger('reset')
 }
   const newKudoFailure = function (error){

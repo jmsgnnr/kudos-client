@@ -44,6 +44,7 @@ function displayKudo () {
  `
     div.innerHTML = kudo
   }
+  
   module.exports = {
     displayKudo
   }

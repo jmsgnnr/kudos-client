@@ -21,6 +21,7 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+
 }
 
 const onChangePassword = function (event) {
@@ -41,16 +42,13 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
-const onRandomGen = function (event) {
-  event.preventDefault()
-  api.newKudo()
-    .then(ui.newKudoSuccess)
-// .catch(ui.newKudoFailure)
-}
+
 const onCreateKudo = function (event){
   event.preventDefault()
-  console.log('made it to events page')
-  api.createKudo()
+  const form = event.target
+  const kudoData = getFormFields(form)
+  console.log('made it to events page', kudoData)
+  api.createKudo(kudoData)
   .then(ui.newKudoSuccess)
   .catch(ui.newKudoFailure)
 }
@@ -87,7 +85,7 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onRandomGen,
+  // onRandomGen,
  onCreateKudo,
  onIndexKudos,
   onUpdateKudo,
