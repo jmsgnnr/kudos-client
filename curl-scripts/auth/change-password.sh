@@ -9,3 +9,5 @@ curl "https://frozen-shore-45480.herokuapp.com/change-password" \
     "new" : "'"${NEWPW}"'"
     }
 }'
+
+

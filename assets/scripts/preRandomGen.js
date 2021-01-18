@@ -47,21 +47,22 @@ const onRandomGen = function (event) {
     .then(ui.newKudoSuccess)
 // .catch(ui.newKudoFailure)
 }
-const onNewKudo = function (event){
+const onCreateKudo = function (event){
   event.preventDefault()
   console.log('made it to events page')
 }
-// onGetKudo = function (event){
-// event.preventDefault()
-// console.log('made it to get Kudos')
+const onIndexKudos = function () {
+  api.indexKudos()
+    .then(ui.onIndexSuccess)
+    .catch(ui.onError)
+}
 
-// }
 
 const onUpdateKudo = function (event) {
   event.preventDefault()
   const form = event.target
-  const KudoData = getFormFields(form)
-  api.updateKudo(KudoData)
+  const kudoData = getFormFields(form)
+  api.updateKudo(kudoData)
     .then(ui.updateKudoSuccess)
     .catch(ui.updateKudoFailure)
 }
@@ -69,10 +70,10 @@ const onUpdateKudo = function (event) {
 const onDeleteKudo = function (event) {
   event.preventDefault()
   const form = event.target
-  const KudoData = getFormFields(form)
-  // console.log(KudoData)
-  // console.log(KudoData.Kudo)
-  api.deleteKudo(KudoData)
+  const kudoData = getFormFields(form)
+  console.log(KudoData)
+  console.log(KudoData.Kudo)
+  api.deleteKudo(kudoData)
     .then(ui.deleteKudoSuccess)
     .catch(ui.deleteKudoFailure)
 }
@@ -84,9 +85,9 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onRandomGen,
-  onNewKudo,
+ onCreateKudo,
+ onIndexKudos,
   onUpdateKudo,
   onDeleteKudo,
-  // onGetKudo
-  // onGetKudos
+ 
 }

@@ -1,5 +1,6 @@
 'use strict'
 
+const { data } = require('jquery')
 const config = require('./config')
 const store = require('./store')
 
@@ -40,23 +41,49 @@ const signOut = function () {
       })
   }
 
-  const newKudo = function (formData) {
-    console.log('data being sent to the server is', formData)
+  const createKudo = function (data) {
+    console.log('data being sent to the server is',)
     return $.ajax({
-      url: config.apiUrl + '/kudos',
+      url: config.apiUrl + '/kudos/',
       method: 'POST',
-      data: formData
+      data,
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      }
     })
     }
-
-    const getKudo = function(){
+    const indexKudos = function(data){
           return $.ajax({
-            url: config.apiUrl + '/kudos',
+            url: config.apiUrl + '/kudos/' + data.kudo.id ,
             method: 'GET',
-            headers: {authorization: 'Bearer ' + store.user.token},
-            data: {}
+            headers: {
+            Authorization: 'Bearer ' + store.user.token
+          }
 
           })
+  }
+  const updateKudo = function(data){
+    return $.ajax({
+      url: config.apiUrl + '/kudos/' + data.kudo.id,
+      method: 'PATCH',
+      data,
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      }
+
+    })
+
+
+  }
+  const destroyKudo = function(data){
+    return $.ajax({
+      url: config.apiUrl + '/kudos/' + data.kudo.id,
+      method: 'DELETE',
+      data,
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      }
+    })
   }
 
   
@@ -65,7 +92,10 @@ signUp,
 signIn,
 changePassword,
 signOut, 
-newKudo,
-getKudo
+createKudo,
+indexKudos,
+updateKudo,
+destroyKudo
+
 
 }
