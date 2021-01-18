@@ -18,7 +18,7 @@ const signInSuccess = function (response) {
   $('.unauthenticated').hide()
   $('.authenticated').show()
   $('form').trigger('reset')
-  $('.numBoard').show()
+  $('.posiBot').show()
 }
 
 const signInFailure = function (error) {
@@ -50,7 +50,7 @@ const signOutFailure = function () {
 const newKudoSuccess = function quotes () {
   $('#message').text('New Kudo Success! Welcome :)')
   console.log(store)
-  $('.numBoard').show()
+  $('.posiBot').show()
   $('.testing').hide()
   $('form').trigger('reset')
 }
@@ -60,7 +60,7 @@ const newKudoSuccess = function quotes () {
  }
 const getKudosSuccess = function (responseData) {
   console.log(responseData)
-  const allQuotes = responseData.quotes.length
+  const allKudos = responseData.kudos.length
 
   $('#message').text("testttttt"  + allKudos)
     $('form').trigger('reset')

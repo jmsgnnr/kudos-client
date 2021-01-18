@@ -50,6 +50,9 @@ const onRandomGen = function (event) {
 const onCreateKudo = function (event){
   event.preventDefault()
   console.log('made it to events page')
+  api.createKudo()
+  .then(ui.newKudoSuccess)
+  .catch(ui.newKudoFailure)
 }
 const onIndexKudos = function () {
   api.indexKudos()
@@ -89,5 +92,4 @@ module.exports = {
  onIndexKudos,
   onUpdateKudo,
   onDeleteKudo,
- 
-}
+ }

@@ -44,7 +44,7 @@ const signOut = function () {
   const createKudo = function (data) {
     console.log('data being sent to the server is',)
     return $.ajax({
-      url: config.apiUrl + '/kudos/',
+      url: config.apiUrl + '/kudos',
       method: 'POST',
       data,
       headers: {
@@ -54,7 +54,7 @@ const signOut = function () {
     }
     const indexKudos = function(data){
           return $.ajax({
-            url: config.apiUrl + '/kudos/' + data.kudo.id ,
+            url: config.apiUrl + '/kudos/' + data.kudo._id ,
             method: 'GET',
             headers: {
             Authorization: 'Bearer ' + store.user.token
@@ -64,7 +64,7 @@ const signOut = function () {
   }
   const updateKudo = function(data){
     return $.ajax({
-      url: config.apiUrl + '/kudos/' + data.kudo.id,
+      url: config.apiUrl + '/kudos/' + data.kudo._id,
       method: 'PATCH',
       data,
       headers: {
@@ -77,7 +77,7 @@ const signOut = function () {
   }
   const destroyKudo = function(data){
     return $.ajax({
-      url: config.apiUrl + '/kudos/' + data.kudo.id,
+      url: config.apiUrl + '/kudos/' + data.kudo._id,
       method: 'DELETE',
       data,
       headers: {
@@ -96,6 +96,4 @@ createKudo,
 indexKudos,
 updateKudo,
 destroyKudo
-
-
 }
