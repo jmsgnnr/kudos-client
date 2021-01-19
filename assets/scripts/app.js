@@ -9,6 +9,9 @@ const randomGen = require('./randomGen')
 // require('./example')
 
 $(() => {
+  $('.page-2').hide()
+  $('.page-3').hide()
+  $('.page-1').show()
   $('.authenticated').hide()
   $('.posiBot').hide()
   $('#sign-up').on('submit', preRandomGen.onSignUp)
