@@ -17,7 +17,7 @@ $(() => {
   $('#change-password').on('submit', preRandomGen.onChangePassword)
   $('.signOut').on('click', preRandomGen.onSignOut)
   $('#play').on('click', preRandomGen.onSignOut)
-  $('#newKudoForm').on('submit', preRandomGen.onNewKudo)
+  $('#newKudoForm').on('submit', preRandomGen.onCreateKudo)
   /// /REMEMBER ( FOR YOUR FUNCTIONS)
   $('.posiBot').on('click', randomGen.randomizerMath())
 // $('.getKudos').on('click', preRandomGen.onGetKudos)

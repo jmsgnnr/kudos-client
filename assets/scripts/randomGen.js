@@ -1,6 +1,6 @@
 'use strict'
 
-const randomizerMath = function () {
+  const randomizerMath = function () {
   const btn = document.querySelector('.btn')
   // should real html from quote
   // add user quote feature ?

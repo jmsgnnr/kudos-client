@@ -41,50 +41,49 @@ const signOut = function () {
       })
   }
 
-  const createKudo = function (data) {
+  const createKudo = function (kudoData) {
     console.log('data being sent to the server is',)
     return $.ajax({
       url: config.apiUrl + '/kudos',
       method: 'POST',
-      data,
+      data: kudoData,
       headers: {
         Authorization: 'Bearer ' + store.user.token
       }
     })
     }
-    const indexKudos = function(data){
-          return $.ajax({
-            url: config.apiUrl + '/kudos/' + data.kudo._id ,
-            method: 'GET',
-            headers: {
-            Authorization: 'Bearer ' + store.user.token
-          }
+  //   const indexKudos = function(kudoData){
+  //         return $.ajax({
+  //           url: config.apiUrl + '/kudos/' + kudoData.kudo._id ,
+  //           method: 'GET',
+  //           headers: {
+  //           Authorization: 'Bearer ' + store.user.token
+  //         }
 
-          })
-  }
-  const updateKudo = function(data){
-    return $.ajax({
-      url: config.apiUrl + '/kudos/' + data.kudo._id,
-      method: 'PATCH',
-      data,
-      headers: {
-        Authorization: 'Bearer ' + store.user.token
-      }
+  //         })
+  // }
+  // const updateKudo = function(kudoData){
+  //   return $.ajax({
+  //     url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
+  //     method: 'PATCH',
+  //     data,
+  //     headers: {
+  //       Authorization: 'Bearer ' + store.user.token
+  //     }
+  //   })
 
-    })
 
-
-  }
-  const destroyKudo = function(data){
-    return $.ajax({
-      url: config.apiUrl + '/kudos/' + data.kudo._id,
-      method: 'DELETE',
-      data,
-      headers: {
-        Authorization: 'Bearer ' + store.user.token
-      }
-    })
-  }
+  // }
+  // const destroyKudo = function(kudoData){
+  //   return $.ajax({
+  //     url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
+  //     method: 'DELETE',
+  //     data: kudoData,
+  //     headers: {
+  //       Authorization: 'Bearer ' + store.user.token
+  //     }
+  //   })
+  // }
 
   
 module.exports = {
@@ -93,7 +92,7 @@ signIn,
 changePassword,
 signOut, 
 createKudo,
-indexKudos,
-updateKudo,
-destroyKudo
+// indexKudos,
+// updateKudo,
+// destroyKudo
 }
