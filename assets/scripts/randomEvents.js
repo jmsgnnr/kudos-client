@@ -1,10 +1,13 @@
 'use strict'
 
+const api = require("./api")
+const ui = require("./ui")
+
   const randomizerMath = function () {
-  const btn = document.querySelector('.btn')
+  // const btn = document.querySelector('.btn')
   // should real html from quote
   // add user quote feature ?
-  btn.addEventListener('click', displayKudo)
+  // btn.addEventListener('click', displayKudo)
 // Test array for quote list.
    const kudos = [
     'you are special',
@@ -28,27 +31,34 @@
     'we love you '
 
   ]
+}
 
 function displayKudo () {
-    // create an index of a random number
-    // convert it into between 0 to length of Kudos[]
-    // randomizer function also same for userKudos
-    const index = Math.floor(Math.random() * kudos.length)
 
-    // display the quote of that index
-    const div = document.querySelector('#kudo')
-    const kudo = `<div class="card">
+  const index = Math.floor(Math.random() * kudos.length)
+// display the quote of that index
+  const div = document.querySelector('#kudo')
+  const kudo = `<div class="card">
 <p>${kudos[index]}</p>
- 
+
 </div>
- `
-    div.innerHTML = kudo
-  }
-  
-  module.exports = {
-    displayKudo
-  }
+`
+  div.innerHTML = kudo
 }
+//run store.kudos into function
+
+  const newRandomizer = function (event){
+  console.log('u made it baby')
+  console.log(event)
+    api.getKudos()
+    .then(ui.getKudosSuccess)
+    .catch(ui.getKudosFailure)
+
+}
+
+
 module.exports = {
-  randomizerMath
+  randomizerMath,
+  displayKudo,
+  newRandomizer
 }

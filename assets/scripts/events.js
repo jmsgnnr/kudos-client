@@ -43,6 +43,8 @@ const onSignOut = function (event) {
 }
 
 
+
+
 const onCreateKudo = function (event){
   event.preventDefault()
   const form = event.target
@@ -52,7 +54,6 @@ const onCreateKudo = function (event){
   .then(ui.newKudoSuccess)
   .catch(ui.newKudoFailure)
 }
-
 
 // const onIndexKudos = function () {
 //   api.indexKudos()

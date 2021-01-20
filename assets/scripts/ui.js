@@ -48,12 +48,13 @@ const signOutFailure = function () {
   console.log('hi')
   $('form').trigger('reset')
 }
-
 const newKudoSuccess = function (responseData) {
   $('#message').text('New Kudo Success! Welcome :)')
   console.log('this is response data inside of ui', responseData )
-  $('form').trigger('reset')
+$('form').trigger('reset')
+
 }
+
   const newKudoFailure = function (error){
     $('#message').text('new game failed wit error: ' + error.responseJSON.message)
     $('form').trigger('reset')
@@ -67,6 +68,9 @@ const getKudosSuccess = function (responseData) {
 
   }
 
+  const getKudosFailure = function (){
+    console.log('error')
+  }
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -78,5 +82,6 @@ module.exports = {
   signOutFailure,
   newKudoSuccess,
   newKudoFailure,
-  getKudosSuccess
+  getKudosSuccess,
+  getKudosFailure
 }
