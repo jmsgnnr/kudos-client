@@ -1,5 +1,6 @@
 'use strict'
 
+const getFormFields = require("../../lib/get-form-fields")
 const api = require("./api")
 const ui = require("./ui")
 
@@ -40,7 +41,6 @@ function displayKudo () {
   const div = document.querySelector('#kudo')
   const kudo = `<div class="card">
 <p>${kudos[index]}</p>
-
 </div>
 `
   div.innerHTML = kudo
@@ -50,15 +50,23 @@ function displayKudo () {
   const newRandomizer = function (event){
   console.log('u made it baby')
   console.log(event)
-    api.getKudos()
-    .then(ui.getKudosSuccess)
-    .catch(ui.getKudosFailure)
+    // api.getKudos()
+    // .then(ui.getKudosSuccess)
+    // .catch(ui.getKudosFailure)
 
 }
+const updateKudo = function (event){
+  event.preventDefault()
+// console.log('u made it friend')
+const kudoData = getFormFields(event.target)
+// console.log(kudoData)
+api.updateKudo(kudoData)
 
+}
 
 module.exports = {
   randomizerMath,
   displayKudo,
-  newRandomizer
+  newRandomizer,
+  updateKudo
 }

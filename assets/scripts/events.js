@@ -1,4 +1,3 @@
-
 'use strict'
 const api = require('./api')
 const ui = require('./ui')
@@ -89,7 +88,7 @@ module.exports = {
   onChangePassword,
   onSignOut,
   // onRandomGen,
- onCreateKudo,
+ onCreateKudo
 //  onIndexKudos,
 //   onUpdateKudo,
 //   onDeleteKudo,

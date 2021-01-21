@@ -1,7 +1,6 @@
 'use strict'
-const events = require('./events')
-const randomEvents = require('./randomEvents')
-
+const events = require('./events.js')
+const randomEvents = require('./randomEvents.js')
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
@@ -21,6 +20,7 @@ $(() => {
   $('.signOut').on('click', events.onSignOut)
   $('#play').on('click', events.onSignOut)
   $('#newKudoForm').on('submit', events.onCreateKudo)
+  $('#changeKudo').on('submit', randomEvents.updateKudo)
   /// /REMEMBER ( FOR YOUR FUNCTIONS)
   // $('.posiBot').on('click', randomGen.randomizerMath())
   $('#btn').on('click', randomEvents.newRandomizer)

@@ -64,7 +64,7 @@ const signOut = function () {
   }
   const updateKudo = function(kudoData){
     return $.ajax({
-      url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
+      url: config.apiUrl + '/kudos',
       method: 'PATCH',
       data,
       headers: {
@@ -74,16 +74,16 @@ const signOut = function () {
 
 
   }
-  const destroyKudo = function(kudoData){
-    return $.ajax({
-      url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
-      method: 'DELETE',
-      data: kudoData,
-      headers: {
-        Authorization: 'Bearer ' + store.user.token
-      }
-    })
-  }
+  // const destroyKudo = function(kudoData){
+  //   return $.ajax({
+  //     url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
+  //     method: 'DELETE',
+  //     data: kudoData,
+  //     headers: {
+  //       Authorization: 'Bearer ' + store.user.token
+  //     }
+  //   })
+  // }
 
   
 module.exports = {
@@ -94,5 +94,5 @@ signOut,
 createKudo,
 getKudos,
 updateKudo,
-destroyKudo
+// destroyKudo
 }
