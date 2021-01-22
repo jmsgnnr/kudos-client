@@ -40,37 +40,60 @@ const signOutSuccess = function () {
   $('.message').text('sign out success! :)')
   $('.unauthenticated').show()
   $('.authenticated').hide()
-  $('.gameBoard').hide()
+  $('#getKudos').hide()
+  $('#getRandom').hide()
+  $('.posiBot').hide()
   store.user = null
   $('form').trigger('reset')
+
 }
 const signOutFailure = function () {
   console.log('hi')
   $('form').trigger('reset')
 }
-// const newKudoSuccess = function (responseData) {
-//   $('.message').text('New Kudo Success! Welcome :)')
-//   console.log('this is response data inside of ui', responseData )
-// $('form').trigger('reset')
+const createKudoSuccess = function (responseData) {
+  $('.message').text('New Kudo Success! Welcome :)')
+  console.log('this is response data inside of ui', responseData )
+$('form').trigger('reset')
+
+}
+
+  const createKudoFailure = function (error){
+    $('.message').text('error: ' + error.responseJSON.message)
+    $('form').trigger('reset')
+ }
+const indexKudosSuccess = function (responseData) {
+  console.log(responseData)
+  const allKudos = responseData.kudos
+
+  $('.message').text("testttttt "  + allKudos)
+    $('form').trigger('reset')
+
+  }
+
+  const indexKudosFailure = function (){
+    console.log('error')
+  }
+
+//  const updateKudoSuccess = function (responseData){
+// console.log(responseData)
+
+//   }
+
+//   const updateKudoFailure = function () {
+
+
+//   }
+// const deleteKudoSuccess = function (){
+
+
+// }
+// const deleteKudoFailure = function () {
+
 
 // }
 
-//   const newKudoFailure = function (error){
-//     $('.message').text('new game failed wit error: ' + error.responseJSON.message)
-//     $('form').trigger('reset')
-//  }
-// const getKudosSuccess = function (responseData) {
-//   console.log(responseData)
-//   const allKudos = responseData.kudos.length
 
-//   $('.message').text("testttttt"  + allKudos)
-//     $('form').trigger('reset')
-
-//   }
-
-//   const getKudosFailure = function (){
-//     console.log('error')
-//   }
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -79,9 +102,13 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
-  // newKudoSuccess,
-  // newKudoFailure,
-  // getKudosSuccess,
-  // getKudosFailure
+  signOutFailure,
+  createKudoSuccess,
+  createKudoFailure,
+  indexKudosSuccess,
+  indexKudosFailure,
+//   updateKudoSuccess,
+//   updateKudoFailure,
+//   deleteKudoSuccess,
+//   deleteKudoFailure
 }

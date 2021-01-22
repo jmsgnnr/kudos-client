@@ -79,31 +79,36 @@
                    
                     <div class="posiBot">
                         <div class="card">
-                          <h2>NEED $UPPORT?</h2>
-                      
-                       <form id='newKudoForm'>
+                        <form id='newKudoForm'>
+                        <h2>NEED $UPPORT?</h2>
                         <input type='text' placeholder='LEAVE $OME <3' name='kudo[kudos]'>
                         <button type='submit' id='submitKudo'>ADD Kudo!</button>
                         
                       </form>
 
-                      <form id="changeKudo">
+                      <form id="getKudos">
                         <input
-                          placeholder="ID"
+                          placeholder="Get kudos ID"
                           type="text"
                           name="id"
                           autocomplete="off"
                         />
+                        <button type="submit" id="getBtn" >GET LIST</button>
+                        <div>
                         <input
-                          placeholder="!NEW KUDOS!"
+                          placeholder="!UPDATE KUDOS!"
                           type="text"
                           name="kudo[new]"
                           autocomplete="off"
                         />
                         <button type="submit" >CLICK</button>
+                        </div>
                         </form>
-                    <button id="btn" class="btn">GET RANDOM!</button>
+                    
                       <form>
+                        <div id='getRandom'>
+                          <button id="btn" class="btn">GET RANDOM!</button>
+                        </div>
                         </div>
                         <div id="kudo"></div>
                         </form>
