@@ -85,13 +85,8 @@
                        <form id='newKudoForm'>
                         <input type='text' placeholder='LEAVE $OME <3' name='kudo[kudos]'>
                         <button type='submit' id='submitKudo'>ADD Kudo!</button>
-                        
-                      </form>
-
-                      <form id="getKudos">
-                       
                         <button type="submit" id="getBtn" >GET LIST</button>
-                        </form>
+                      </form>
                     
                         <form id='updateKudos'>
                         <div>
@@ -104,20 +99,34 @@
                         <input
                           placeholder="!UPDATE KUDOS!"
                           type="text"
-                          name="kudo[new]"
+                          name="kudo[kudos]"
                           autocomplete="off"
                         />
-                        <button type="submit" >CLICK</button>
+                        <button type="submit" >UPDATE!</button>
+                      
                         </div>
                         </form>
+                        <form id='deleteKudos'>
+                          <div>
+                              
+                        <input
+                        placeholder="!DESTROY!"
+                        type="text"
+                        name="id"
+                        autocomplete="off"
+                      />
+                      <button type="submit" >DELETE!</button>
+                        </div>
+
+                        </form>
                     
-                      <form>
-                        <div id='getRandom'>
-                          <button id="btn" class="btn">GET RANDOM!</button>
+                     
+                        <div>
+                          <button id="randomBtn">GET RANDOM!</button>
                         </div>
                         </div>
                         <div id="kudo"></div>
-                        </form>
+                     
                         
                     </div>
                 </body>

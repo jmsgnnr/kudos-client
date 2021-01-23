@@ -70,11 +70,11 @@ $('form').trigger('reset')
  // different pieces of data in an array , forEach will extract text from HTML
 
 const indexKudosSuccess = function (responseData) {
-  console.log('works')
   const kudos = responseData.kudos
   let kudosHTML = ''
   kudos.forEach (function(currentKudo){
     console.log(currentKudo)
+    console.log(responseData)
 //remember backticks for string interpolation 
 const currentKudoHTML = `
 <h2>${currentKudo.kudos}</h2>
@@ -84,6 +84,7 @@ const currentKudoHTML = `
 // for each assigns them into HTML
 // add value from current kudoHTML into the blank array 
 kudosHTML += currentKudoHTML
+
  })
  $('#kudo').html(kudosHTML)
  $('form').trigger('reset')
@@ -93,8 +94,8 @@ const indexKudosFailure = function (){
     console.log('error')
   }
 
- const updateKudoSuccess = function (responseData){
-console.log(responseData)
+ const updateKudoSuccess = function (kudoData){
+console.log('kudoData')
 $('form').trigger('reset')
 
   }
@@ -104,15 +105,33 @@ console.log('error')
 $('form').trigger('reset')
 
   }
-// const deleteKudoSuccess = function (){
+const deleteKudoSuccess = function (){
+console.log('yeppppp')
+$('form').trigger('reset')
+
+}
+const deleteKudoFailure = function () {
+console.log('nooooooo')
+$('form').trigger('reset')
+}
+
+const randomKudoSuccess = function(kudos) {
+  const randomKudos = [Math.floor(Math.random() * kudos.length)];
+  //  console.log('random made it')
+  const randomKudoHTML = `
+  <h2>${kudos.kudos}</h2>
+  
+  `
+  $('#kudo').html(randomKudos)
+  $('form').trigger('reset')
 
 
-// }
-// const deleteKudoFailure = function () {
+}
 
-
-// }
-
+const randomKudoFailure = function (){
+  console.log('noooooo')
+  $('form').trigger('reset')
+}
 
 module.exports = {
   signUpSuccess,
@@ -128,7 +147,9 @@ module.exports = {
   indexKudosSuccess,
   indexKudosFailure,
   updateKudoSuccess,
-  updateKudoFailure
-//   deleteKudoSuccess,
-//   deleteKudoFailure
+  updateKudoFailure,
+  deleteKudoSuccess,
+  deleteKudoFailure,
+  randomKudoFailure,
+  randomKudoSuccess
 }

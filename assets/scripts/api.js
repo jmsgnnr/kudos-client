@@ -63,16 +63,19 @@ const signOut = function () {
           })
   }
   const updateKudo = function(kudoData){
-    console.log(kudoData)
+    // console.log(kudoData)
     return $.ajax({
       url: config.apiUrl + '/kudos/' + kudoData.id,
       method: 'PATCH',
-      data: kudoData
+      data: kudoData,
+      headers: {
+        Authorization: 'Bearer ' + store.user.token
+      }
     })
  }
-  const destroyKudo = function(kudoData){
+  const deleteKudo = function(kudoData){
     return $.ajax({
-      url: config.apiUrl + '/kudos/' + kudoData.kudo.id,
+      url: config.apiUrl + '/kudos/' + kudoData.id,
       method: 'DELETE',
       data: kudoData,
       headers: {
@@ -80,6 +83,17 @@ const signOut = function () {
       }
     })
   }
+
+  const getRandomKudos = function(){
+return $.ajax({
+  url: config.apiUrl + '/kudos/',
+  method: 'GET',
+  headers: {
+    Authorization: 'Bearer ' + store.user.token
+
+  }
+})
+}
 
   
 module.exports = {
@@ -90,5 +104,6 @@ signOut,
 createKudo,
 indexKudos,
 updateKudo,
-destroyKudo
+deleteKudo,
+getRandomKudos
 }

@@ -2,53 +2,18 @@
 
 const getFormFields = require("../../lib/get-form-fields")
 const api = require("./api")
+const store = require("./store")
 const ui = require("./ui")
 
-//  const kudos = [
-//     'you are special',
-//     'you can rly do anything',
-//     'seriously, remember this stuff',
-//     'you can do anything you set your mind to',
-//     'wow so smart, so cute',
-//     'have you appreciated yourself today?',
-//     ' meditate',
-//     ' breathe',
-//     ' you arent poor, you are pre-rich',
-//     ' call your family today',
-//     'you deserve a break',
-//     ' do not be hard on yourself',
-//     ' you are rare',
-//     ' you are a champion',
-//     ' you are great ',
-//     ' you are limitless',
-//     ' God loves you',
-//     ' You love you',
-//     'we love you '
 
-//   ]
-// const displayKudo = function (event) {
- 
-// const allKudos = event.kudos
-// console.log(store.kudos)
-//   const randomKudos = allKudos[Math.floor(Math.random() * kudos.length)];
-// // display the quote of that index
-//   const div = document.querySelector('#kudo')
-//   const kudo = `<div class="card">
-// <p>${kudos[randomKudos]}</p>
-// </div>
-// // `
-//   div.innerHTML = kudo
-// }
-//run store.kudos into function
-// const newRandomizer = function (event){
-//     event.preventDefault()
-//   console.log('u made it baby')
-//   console.log(event)
-//     api.getKudos()
-//     .then(ui.getKudosSuccess)
-//     .catch(ui.getKudosFailure)
+const randomizeKudos = function(event) {
+  event.preventDefault()
+console.log('made it to random')
+api.getRandomKudos()
+.then(ui.randomKudoSuccess)
+.catch(ui.randomKudoFailure)
 
-// }
+}
 const updateKudo = function (event){
   event.preventDefault()
 console.log('u made it friend')
@@ -77,10 +42,7 @@ api.indexKudos()
 
 const deleteKudo = function (event) {
   event.preventDefault()
-  const form = event.target
-  const kudoData = getFormFields(form)
-  console.log(kudoData)
-  console.log(kudoData.Kudo)
+  const kudoData = getFormFields(event.target)
   api.deleteKudo(kudoData)
     .then(ui.deleteKudoSuccess)
     .catch(ui.deleteKudoFailure)
@@ -90,6 +52,7 @@ module.exports = {
   // randomizerMath,
   // displayKudo,
   // newRandomizer,
+  randomizeKudos,
   updateKudo,
   createNewKudo,
   indexKudos,
