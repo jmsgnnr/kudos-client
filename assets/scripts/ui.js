@@ -66,28 +66,44 @@ $('form').trigger('reset')
     $('.message').text('error: ' + error.responseJSON.message)
     $('form').trigger('reset')
  }
- // we cant make two seperate things one variable
+ // we cant make two seperate things one variable , so we use a for each loop to iterate through 
+ // different pieces of data in an array , forEach will extract text from HTML
+
 const indexKudosSuccess = function (responseData) {
   console.log('works')
-  const allKudos = (responseData)
-  // const ownerKudos = (responseData.kudos.owner)
-  console.log(allKudos)
-$('.message').text(allKudos)
-   }
+  const kudos = responseData.kudos
+  let kudosHTML = ''
+  kudos.forEach (function(currentKudo){
+    console.log(currentKudo)
+//remember backticks for string interpolation 
+const currentKudoHTML = `
+<h2>${currentKudo.kudos}</h2>
+<h3>${currentKudo._id}</h3>
+`
+// the for each function loops through kudos/grabs kudo data (kudos,id)
+// for each assigns them into HTML
+// add value from current kudoHTML into the blank array 
+kudosHTML += currentKudoHTML
+ })
+ $('#kudo').html(kudosHTML)
+ $('form').trigger('reset')
+}
 
-  const indexKudosFailure = function (){
+const indexKudosFailure = function (){
     console.log('error')
   }
 
-//  const updateKudoSuccess = function (responseData){
-// console.log(responseData)
+ const updateKudoSuccess = function (responseData){
+console.log(responseData)
+$('form').trigger('reset')
 
-//   }
+  }
 
-//   const updateKudoFailure = function () {
+  const updateKudoFailure = function () {
+console.log('error')
+$('form').trigger('reset')
 
-
-//   }
+  }
 // const deleteKudoSuccess = function (){
 
 
@@ -110,9 +126,9 @@ module.exports = {
   createKudoSuccess,
   createKudoFailure,
   indexKudosSuccess,
-  indexKudosFailure
-//   updateKudoSuccess,
-//   updateKudoFailure,
+  indexKudosFailure,
+  updateKudoSuccess,
+  updateKudoFailure
 //   deleteKudoSuccess,
 //   deleteKudoFailure
 }

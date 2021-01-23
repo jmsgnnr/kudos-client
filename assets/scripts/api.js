@@ -63,20 +63,16 @@ const signOut = function () {
           })
   }
   const updateKudo = function(kudoData){
+    console.log(kudoData)
     return $.ajax({
-      url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
+      url: config.apiUrl + '/kudos/' + kudoData.id,
       method: 'PATCH',
-      data: kudoData, 
-      headers: {
-        Authorization: 'Bearer ' + store.user.token
-      }
+      data: kudoData
     })
-
-
-  }
+ }
   const destroyKudo = function(kudoData){
     return $.ajax({
-      url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
+      url: config.apiUrl + '/kudos/' + kudoData.kudo.id,
       method: 'DELETE',
       data: kudoData,
       headers: {
