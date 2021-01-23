@@ -12,6 +12,9 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (response) {
   $('.message').text('Sign In Success! Welcome :)')
+  $('#getKudos').show()
+  $('#getRandom').show()
+  $('.posiBot').show()
   console.log(store)
   store.user = response.user
 
@@ -53,7 +56,8 @@ const signOutFailure = function () {
 }
 const createKudoSuccess = function (responseData) {
   $('.message').text('New Kudo Success! Welcome :)')
-  console.log('this is response data inside of ui', responseData )
+  $('.message2').text(responseData.kudo._id)
+  console.log('this is response data inside of ui', responseData)
 $('form').trigger('reset')
 
 }
@@ -62,14 +66,14 @@ $('form').trigger('reset')
     $('.message').text('error: ' + error.responseJSON.message)
     $('form').trigger('reset')
  }
+ // we cant make two seperate things one variable
 const indexKudosSuccess = function (responseData) {
-  console.log(responseData)
-  const allKudos = responseData.kudos
-
-  $('.message').text("testttttt "  + allKudos)
-    $('form').trigger('reset')
-
-  }
+  console.log('works')
+  const allKudos = (responseData)
+  // const ownerKudos = (responseData.kudos.owner)
+  console.log(allKudos)
+$('.message').text(allKudos)
+   }
 
   const indexKudosFailure = function (){
     console.log('error')
@@ -106,7 +110,7 @@ module.exports = {
   createKudoSuccess,
   createKudoFailure,
   indexKudosSuccess,
-  indexKudosFailure,
+  indexKudosFailure
 //   updateKudoSuccess,
 //   updateKudoFailure,
 //   deleteKudoSuccess,

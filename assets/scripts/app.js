@@ -24,4 +24,5 @@ $(() => {
   // $('.posiBot').on('click', randomGen.randomizerMath())
   // $('#btn').on('click', randomEvents.displayKudo)
 $('#getBtn').on('click', randomEvents.indexKudos)
+$('#updateKudos').on('submit', randomEvents.updateKudo)
 })

@@ -51,7 +51,7 @@ const ui = require("./ui")
 // }
 const updateKudo = function (event){
   event.preventDefault()
-// console.log('u made it friend')
+console.log('u made it friend')
 const kudoData = getFormFields(event.target)
 // console.log(kudoData)
 api.updateKudo(kudoData)
@@ -68,22 +68,22 @@ api.createKudo(kudoData)
 
 const indexKudos = function(event){
 event.preventDefault()
-// console.log('yoooo')
+console.log('yoooo')
 api.indexKudos()
 .then(ui.indexKudosSuccess)
   .catch(ui.indexKudosFailure)
 }
 
-// const onDeleteKudo = function (event) {
-//   event.preventDefault()
-//   const form = event.target
-//   const kudoData = getFormFields(form)
-//   console.log(kudoData)
-//   console.log(kudoData.Kudo)
-//   api.deleteKudo(kudoData)
-//     .then(ui.deleteKudoSuccess)
-//     .catch(ui.deleteKudoFailure)
-// }
+const deleteKudo = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const kudoData = getFormFields(form)
+  console.log(kudoData)
+  console.log(kudoData.Kudo)
+  api.deleteKudo(kudoData)
+    .then(ui.deleteKudoSuccess)
+    .catch(ui.deleteKudoFailure)
+}
 
 module.exports = {
   // randomizerMath,
@@ -91,5 +91,6 @@ module.exports = {
   // newRandomizer,
   updateKudo,
   createNewKudo,
-  indexKudos
+  indexKudos,
+  deleteKudo
 }
