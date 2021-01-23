@@ -3921,7 +3921,7 @@ var createKudo = function createKudo(kudoData) {
     }
   });
 };
-var getKudos = function getKudos() {
+var indexKudos = function indexKudos() {
   return $.ajax({
     url: config.apiUrl + '/kudos',
     method: 'GET',
@@ -3933,25 +3933,24 @@ var getKudos = function getKudos() {
 };
 var updateKudo = function updateKudo(kudoData) {
   return $.ajax({
-    url: config.apiUrl + '/kudos',
+    url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
     method: 'PATCH',
-    data: data,
+    data: kudoData,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   });
 };
-// const destroyKudo = function(kudoData){
-//   return $.ajax({
-//     url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
-//     method: 'DELETE',
-//     data: kudoData,
-//     headers: {
-//       Authorization: 'Bearer ' + store.user.token
-//     }
-//   })
-// }
-
+var destroyKudo = function destroyKudo(kudoData) {
+  return $.ajax({
+    url: config.apiUrl + '/kudos/' + kudoData.kudo._id,
+    method: 'DELETE',
+    data: kudoData,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  });
+};
 
 module.exports = {
   signUp: signUp,
@@ -3959,9 +3958,9 @@ module.exports = {
   changePassword: changePassword,
   signOut: signOut,
   createKudo: createKudo,
-  getKudos: getKudos,
-  updateKudo: updateKudo
-  // destroyKudo
+  indexKudos: indexKudos,
+  updateKudo: updateKudo,
+  destroyKudo: destroyKudo
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
 
@@ -3996,6 +3995,9 @@ var signUpFailure = function signUpFailure(error) {
 
 var signInSuccess = function signInSuccess(response) {
   $('.message').text('Sign In Success! Welcome :)');
+  $('#getKudos').show();
+  $('#getRandom').show();
+  $('.posiBot').show();
   console.log(store);
   store.user = response.user;
 
@@ -4024,7 +4026,9 @@ var signOutSuccess = function signOutSuccess() {
   $('.message').text('sign out success! :)');
   $('.unauthenticated').show();
   $('.authenticated').hide();
-  $('.gameBoard').hide();
+  $('#getKudos').hide();
+  $('#getRandom').hide();
+  $('.posiBot').hide();
   store.user = null;
   $('form').trigger('reset');
 };
@@ -4032,29 +4036,49 @@ var signOutFailure = function signOutFailure() {
   console.log('hi');
   $('form').trigger('reset');
 };
-// const newKudoSuccess = function (responseData) {
-//   $('.message').text('New Kudo Success! Welcome :)')
-//   console.log('this is response data inside of ui', responseData )
-// $('form').trigger('reset')
+var createKudoSuccess = function createKudoSuccess(responseData) {
+  $('.message').text('New Kudo Success! Welcome :)');
+  $('.message2').text(responseData.kudo._id);
+  console.log('this is response data inside of ui', responseData);
+  $('form').trigger('reset');
+};
+
+var createKudoFailure = function createKudoFailure(error) {
+  $('.message').text('error: ' + error.responseJSON.message);
+  $('form').trigger('reset');
+};
+// we cant make two seperate things one variable
+var indexKudosSuccess = function indexKudosSuccess(responseData) {
+  console.log('works');
+  var allKudos = responseData;
+  // const ownerKudos = (responseData.kudos.owner)
+  console.log(allKudos);
+  $('.message').text(allKudos);
+};
+
+var indexKudosFailure = function indexKudosFailure() {
+  console.log('error');
+};
+
+//  const updateKudoSuccess = function (responseData){
+// console.log(responseData)
+
+//   }
+
+//   const updateKudoFailure = function () {
+
+
+//   }
+// const deleteKudoSuccess = function (){
+
+
+// }
+// const deleteKudoFailure = function () {
+
 
 // }
 
-//   const newKudoFailure = function (error){
-//     $('.message').text('new game failed wit error: ' + error.responseJSON.message)
-//     $('form').trigger('reset')
-//  }
-// const getKudosSuccess = function (responseData) {
-//   console.log(responseData)
-//   const allKudos = responseData.kudos.length
 
-//   $('.message').text("testttttt"  + allKudos)
-//     $('form').trigger('reset')
-
-//   }
-
-//   const getKudosFailure = function (){
-//     console.log('error')
-//   }
 module.exports = {
   signUpSuccess: signUpSuccess,
   signUpFailure: signUpFailure,
@@ -4063,11 +4087,15 @@ module.exports = {
   changePasswordSuccess: changePasswordSuccess,
   changePasswordFailure: changePasswordFailure,
   signOutSuccess: signOutSuccess,
-  signOutFailure: signOutFailure
-  // newKudoSuccess,
-  // newKudoFailure,
-  // getKudosSuccess,
-  // getKudosFailure
+  signOutFailure: signOutFailure,
+  createKudoSuccess: createKudoSuccess,
+  createKudoFailure: createKudoFailure,
+  indexKudosSuccess: indexKudosSuccess,
+  indexKudosFailure: indexKudosFailure
+  //   updateKudoSuccess,
+  //   updateKudoFailure,
+  //   deleteKudoSuccess,
+  //   deleteKudoFailure
 };
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
 
@@ -16778,13 +16806,13 @@ $(function () {
   $('#sign-in').on('submit', events.onSignIn);
   $('#change-password').on('submit', events.onChangePassword);
   $('.signOut').on('click', events.onSignOut);
-  $('#play').on('click', events.onSignOut);
-  $('#newKudoForm').on('submit', events.onCreateKudo);
+  $('#newKudoForm').on('submit', randomEvents.createNewKudo);
   $('#changeKudo').on('submit', randomEvents.updateKudo);
   /// /REMEMBER ( FOR YOUR FUNCTIONS)
   // $('.posiBot').on('click', randomGen.randomizerMath())
-  $('#btn').on('click', randomEvents.newRandomizer);
-  // $('.getKudos').on('click', events.onGetKudos)
+  // $('#btn').on('click', randomEvents.displayKudo)
+  $('#getBtn').on('click', randomEvents.indexKudos);
+  $('#updateKudos').on('submit', randomEvents.updateKudo);
 });
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(43)))
 
@@ -16828,52 +16856,12 @@ var onSignOut = function onSignOut(event) {
   api.signOut().then(ui.signOutSuccess).catch(ui.signOutFailure);
 };
 
-var onCreateKudo = function onCreateKudo(event) {
-  event.preventDefault();
-  var form = event.target;
-  var kudoData = getFormFields(form);
-  console.log('made it to events page', kudoData);
-  api.createKudo(kudoData).then(ui.newKudoSuccess).catch(ui.newKudoFailure);
-};
-
-// const onIndexKudos = function () {
-//   api.indexKudos()
-//     .then(ui.onIndexSuccess)
-//     .catch(ui.onError)
-// }
-
-
-// const onUpdateKudo = function (event) {
-//   event.preventDefault()
-//   const form = event.target
-//   const kudoData = getFormFields(form)
-//   api.updateKudo(kudoData)
-//     .then(ui.updateKudoSuccess)
-//     .catch(ui.updateKudoFailure)
-// }
-
-// const onDeleteKudo = function (event) {
-//   event.preventDefault()
-//   const form = event.target
-//   const kudoData = getFormFields(form)
-//   console.log(kudoData)
-//   console.log(kudoData.Kudo)
-//   api.deleteKudo(kudoData)
-//     .then(ui.deleteKudoSuccess)
-//     .catch(ui.deleteKudoFailure)
-// }
-
 module.exports = {
-
   onSignUp: onSignUp,
   onSignIn: onSignIn,
   onChangePassword: onChangePassword,
-  onSignOut: onSignOut,
+  onSignOut: onSignOut
   // onRandomGen,
-  onCreateKudo: onCreateKudo
-  //  onIndexKudos,
-  //   onUpdateKudo,
-  //   onDeleteKudo,
 };
 
 /***/ }),
@@ -16945,45 +16933,88 @@ var getFormFields = __webpack_require__(134);
 var api = __webpack_require__(131);
 var ui = __webpack_require__(133);
 
-var randomizerMath = function randomizerMath() {
-  // const btn = document.querySelector('.btn')
-  // should real html from quote
-  // add user quote feature ?
-  // btn.addEventListener('click', displayKudo)
-  // Test array for quote list.
-  var kudos = ['you are special', 'you can rly do anything', 'seriously, remember this stuff', 'you can do anything you set your mind to', 'wow so smart, so cute', 'have you appreciated yourself today?', ' meditate', ' breathe', ' you arent poor, you are pre-rich', ' call your family today', 'you deserve a break', ' do not be hard on yourself', ' you are rare', ' you are a champion', ' you are great ', ' you are limitless', ' God loves you', ' You love you', 'we love you '];
-};
+// const kudos = [
+//   'you are special',
+//   'you can rly do anything',
+//   'seriously, remember this stuff',
+//   'you can do anything you set your mind to',
+//   'wow so smart, so cute',
+//   'have you appreciated yourself today?',
+//   ' meditate',
+//   ' breathe',
+//   ' you arent poor, you are pre-rich',
+//   ' call your family today',
+//   'you deserve a break',
+//   ' do not be hard on yourself',
+//   ' you are rare',
+//   ' you are a champion',
+//   ' you are great ',
+//   ' you are limitless',
+//   ' God loves you',
+//   ' You love you',
+//   'we love you '
 
-function displayKudo() {
+// ]
+// const displayKudo = function (event) {
 
-  var index = Math.floor(Math.random() * kudos.length);
-  // display the quote of that index
-  var div = document.querySelector('#kudo');
-  var kudo = "<div class=\"card\">\n<p>" + kudos[index] + "</p>\n</div>\n";
-  div.innerHTML = kudo;
-}
+// const allKudos = event.kudos
+// console.log(store.kudos)
+//   const randomKudos = allKudos[Math.floor(Math.random() * kudos.length)];
+// // display the quote of that index
+//   const div = document.querySelector('#kudo')
+//   const kudo = `<div class="card">
+// <p>${kudos[randomKudos]}</p>
+// </div>
+// `
+//   div.innerHTML = kudo
+// }
 //run store.kudos into function
+// const newRandomizer = function (event){
+//     event.preventDefault()
+//   console.log('u made it baby')
+//   console.log(event)
+//     api.getKudos()
+//     .then(ui.getKudosSuccess)
+//     .catch(ui.getKudosFailure)
 
-var newRandomizer = function newRandomizer(event) {
-  console.log('u made it baby');
-  console.log(event);
-  // api.getKudos()
-  // .then(ui.getKudosSuccess)
-  // .catch(ui.getKudosFailure)
-};
+// }
 var updateKudo = function updateKudo(event) {
   event.preventDefault();
-  // console.log('u made it friend')
+  console.log('u made it friend');
   var kudoData = getFormFields(event.target);
   // console.log(kudoData)
   api.updateKudo(kudoData);
 };
+var createNewKudo = function createNewKudo(event) {
+  event.preventDefault();
+  console.log('getting there');
+  var kudoData = getFormFields(event.target);
+  api.createKudo(kudoData).then(ui.createKudoSuccess).catch(ui.createKudoFailure);
+};
+
+var indexKudos = function indexKudos(event) {
+  event.preventDefault();
+  console.log('yoooo');
+  api.indexKudos().then(ui.indexKudosSuccess).catch(ui.indexKudosFailure);
+};
+
+var deleteKudo = function deleteKudo(event) {
+  event.preventDefault();
+  var form = event.target;
+  var kudoData = getFormFields(form);
+  console.log(kudoData);
+  console.log(kudoData.Kudo);
+  api.deleteKudo(kudoData).then(ui.deleteKudoSuccess).catch(ui.deleteKudoFailure);
+};
 
 module.exports = {
-  randomizerMath: randomizerMath,
-  displayKudo: displayKudo,
-  newRandomizer: newRandomizer,
-  updateKudo: updateKudo
+  // randomizerMath,
+  // displayKudo,
+  // newRandomizer,
+  updateKudo: updateKudo,
+  createNewKudo: createNewKudo,
+  indexKudos: indexKudos,
+  deleteKudo: deleteKudo
 };
 
 /***/ }),
