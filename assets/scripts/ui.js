@@ -125,7 +125,7 @@ const randomKudoSuccess = function(responseObject) {
   // random number is a number between 0 - kudos.length total
   const randomKudo = responseObject.kudos[randomNumber]
   const randomKudoHTML = `
-  <h2>${randomKudo.kudos}</h2>
+  <h5 id='kudoRead'>${randomKudo.kudos}</h5>
   
   `
   $('#kudo').html(randomKudoHTML)
