@@ -6,7 +6,7 @@ const signUpSuccess = function (response) {
   $('form').trigger('reset')
 }
 const signUpFailure = function (error) {
-  console.log(error)
+  // console.log(error)
   $('.message').text('Sign Up FAILED :( with error: ' + error.responseJSON.message)
 }
 
@@ -15,7 +15,7 @@ const signInSuccess = function (response) {
   $('#getKudos').show()
   $('#getRandom').show()
   $('.posiBot').show()
-  console.log(store)
+  // console.log(store)
   store.user = response.user
 
   $('.unauthenticated').hide()
@@ -57,7 +57,7 @@ const signOutFailure = function () {
 const createKudoSuccess = function (responseData) {
   $('.message').text('New Kudo Success! Welcome :)')
   $('.message2').text(responseData.kudo._id)
-  console.log('this is response data inside of ui', responseData)
+  // console.log('this is response data inside of ui', responseData)
 $('form').trigger('reset')
 
 }
@@ -73,8 +73,8 @@ const indexKudosSuccess = function (responseData) {
   const kudos = responseData.kudos
   let kudosHTML = ''
   kudos.forEach (function(currentKudo){
-    console.log(currentKudo)
-    console.log(responseData)
+    // console.log(currentKudo)
+    // console.log(responseData)
 //remember backticks for string interpolation 
 const currentKudoHTML = `
 <h2>${currentKudo.kudos}</h2>
@@ -91,27 +91,27 @@ kudosHTML += currentKudoHTML
 }
 
 const indexKudosFailure = function (){
-    console.log('error')
+    // console.log('error')
   }
 
  const updateKudoSuccess = function (kudoData){
-console.log('kudoData')
+// console.log('kudoData')
 $('form').trigger('reset')
 
   }
 
   const updateKudoFailure = function () {
-console.log('error')
+// console.log('error')
 $('form').trigger('reset')
 
   }
 const deleteKudoSuccess = function (){
-console.log('yeppppp')
+// console.log('yeppppp')
 $('form').trigger('reset')
 
 }
 const deleteKudoFailure = function () {
-console.log('nooooooo')
+// console.log('nooooooo')
 $('form').trigger('reset')
 }
 // randomly generate a kudo from created array
@@ -121,7 +121,7 @@ const randomKudoSuccess = function(responseObject) {
   // console.log(responseObject)
   // console.log(responseObject.kudos.length)
   const randomNumber = (Math.floor(Math.random() * responseObject.kudos.length) + 1)
-  console.log(randomNumber)
+  // console.log(randomNumber)
   // random number is a number between 0 - kudos.length total
   const randomKudo = responseObject.kudos[randomNumber]
   const randomKudoHTML = `
@@ -135,7 +135,7 @@ const randomKudoSuccess = function(responseObject) {
 }
 
 const randomKudoFailure = function (){
-  console.log('noooooo')
+  // console.log('noooooo')
   $('form').trigger('reset')
 }
 

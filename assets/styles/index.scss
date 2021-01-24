@@ -9,18 +9,17 @@ section {
 }
 
 .unauthenticated{
-  border: ridge #ffffff #bd7878 20px 1px;
+  border: solid rgb(0, 0, 0) 4px;
 font-family: 'Stencil Std', fantasy;
   text-align: center;
-background-color: rgb(250, 224, 77);
+background-color: rgb(240, 237, 224);
 border-radius: 5px ;
-box-shadow: #0055ff 8px 8px 8px 8px ; 
+box-shadow: #ff42aa  8px 8px 8px ; 
 
 }
 
 .authenticated{
-  border: solid rgb(255, 254, 201) 5px;
-  box-shadow: #29fa09 4px 4px 4px 4px ;
+ box-shadow: #29fa09 4px 4px 4px 4px ;
   font-family: 'Stencil Std', fantasy;
   text-align: center;
 background-color: rgb(7, 2, 2);
@@ -34,15 +33,15 @@ border-radius: 5px;
   width:200px;
   font-family: 'Stencil Std', fantasy;
   text-align: center; 
-  border : 10px ridge #2b2020;
-  box-shadow: 0px 8px 8px 20px #ff2870;
-background : #370aff;
+  border : 5px solid #2b2020;
+  box-shadow: 0px 8px 8px 20px #f10554;
+background : #3104f7;
 
 }
 .head2{
   font-family: 'Stencil Std', fantasy;
   text-align: center;
-  border : 10px ridge #2b2020;
+  border : 10px solid #ffefef;
   box-shadow: 0px 8px 8px 8px #e5ff3a;
 background : #5faff5;
 }
@@ -86,20 +85,19 @@ align-items: center ;
     justify-content: center;
     align-items: center;}
 h2 {
-    background-color: #0011ff;
-    color:#222223;
-    padding:10px;
+    background-color: #fc70fc;
+    border: 10px solid #f3ff88;
+    padding: 10px;
     font-family: 'Stencil Std', fantasy;
     text-align: center;
     // border-radius:5px;
-    box-shadow: 4px 4px 4px 4px #ff00e1  ;
+    box-shadow: 0px 4px 4px 4px #374bfc  ;
 }
 
 #randomBtn{
     height:50px;
     width:150px;
     font-size: 18px;
-    font: #eef3fd ;
     background-color: #f3f73b;
     box-shadow: 4px 4px 4px 4px ;
     padding:5px;
@@ -107,17 +105,18 @@ h2 {
 font-family: 'Stencil Std', fantasy;
 }
 
+
 .card{
     padding:15px 30px 15px 30px;
     max-width:500px;
     max-height:300px;
     text-align: center;
-    background-color: #5300a7;
+    background-color: #473aff;
     border-radius: 10px;
     border-top: #ebf5d4 5px;
     margin-top: 20px;
   font-family: 'Stencil Std', fantasy;
-  box-shadow: 3px 4px 4px 3px rgb(225, 233, 181);
+  box-shadow: 3px 4px 4px 3px rgb(0, 110, 255);
     } 
 button:focus {outline: none;}
 
@@ -128,7 +127,9 @@ border-radius: 10px;
   border-top: 10px;
 }
 
-.quote {
+
+#kudo {
+  padding-top: 20px ;
 display: flex;
 justify-content: column;
 align-items: center;
