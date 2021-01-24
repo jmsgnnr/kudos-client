@@ -13,7 +13,7 @@ CSS
 6. Bootstrap 
 
 ## Development process
-Structuring the front end using the technologies listed above, I knew the logic behind implementing my "randomizer" function , I wanted a user experience that would allow a user to view a random positive quote after feeling the stress of coding . Enter Po$i-Bot, a clickable bot that provides user with a positive quote upon click displayed in HTML. In vol.2 , user will be able to add to an array of quotes and edit and delete.
+Structuring the front end using the technologies listed above, I knew the logic behind implementing my "randomizer" function , I wanted a user experience that would allow a user to view a random positive quote after feeling the stress of coding . Enter Po$i-Bot, a clickable bot that provides user with a positive quote upon click displayed in HTML. In the future, I plan on making a user array and a set array feature, with focus on having users/set quotes that are targeted towards destressing during code projects.
 
 
 ## Links 
@@ -29,7 +29,7 @@ Structuring the front end using the technologies listed above, I knew the logic 
 
 ## Unsolved problems
 
-In my revised version of the app, I will implement a userQuotes array with an update and delete feature, using my randomizer method, and allow users to view their specific quotes in a seperate pop up menu . 
+implementing a set array and the kudos array, combined.
 
 
 ## Wireframes/User stories
