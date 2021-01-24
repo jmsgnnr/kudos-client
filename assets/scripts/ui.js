@@ -114,15 +114,21 @@ const deleteKudoFailure = function () {
 console.log('nooooooo')
 $('form').trigger('reset')
 }
+// randomly generate a kudo from created array
+// usaing math.floor(math.random)
 
-const randomKudoSuccess = function(kudos) {
-  const randomKudos = [Math.floor(Math.random() * kudos.length)];
-  //  console.log('random made it')
+const randomKudoSuccess = function(responseObject) {
+  // console.log(responseObject)
+  // console.log(responseObject.kudos.length)
+  const randomNumber = (Math.floor(Math.random() * responseObject.kudos.length) + 1)
+  console.log(randomNumber)
+  // random number is a number between 0 - kudos.length total
+  const randomKudo = responseObject.kudos[randomNumber]
   const randomKudoHTML = `
-  <h2>${kudos.kudos}</h2>
+  <h2>${randomKudo.kudos}</h2>
   
   `
-  $('#kudo').html(randomKudos)
+  $('#kudo').html(randomKudoHTML)
   $('form').trigger('reset')
 
 
