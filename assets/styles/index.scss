@@ -3,33 +3,31 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;1,700&display=swap');
 
 
-// section {
-//     text-align: center;
-//     background-color:  rgb(255, 247, 0)
-// }
-
 .unauthenticated{
   display:flex;
   flex-direction: column;
-  border: solid rgb(0, 0, 0) 4px;
-font-family: 'Stencil Std', fantasy;
-  text-align: center;
-background-color: #fcf5f5;
-// border-radius: 5px ;
-box-shadow: #ff42aa   3px 3px 20px 3px ; 
+  position: relative;
+  font-family: 'Stencil Std', fantasy;
+  text-align: left;
+  background-color: #fcf5f5;
+  width: 300px;
+  height: 10x;
+  border: 10px inset rgb(250, 6, 140);
+  border-radius: 1-px;
+  box-shadow:#ff42aa   3px 3px 20px 3px ; 
 
 }
 
 .authenticated{
   display: flex;
+  
   margin-top: -25px;
   flex-direction: column;
   border: outset 8px rgb(69, 71, 68);
-//  box-shadow: #e1d4e4 4px 4px 20px 4px ;
   font-family: 'Stencil Std', fantasy;
   text-align: center;
-background-color: #fcf5f5;
-// border-radius: 5px;
+  background-color: #fcf5f5;
+
 
 }
 .head1{
@@ -57,6 +55,20 @@ background : #4b23fd;
 background : #eeff57;
 }
 
+#signUpBtn{
+  margin-bottom: 20px;
+  background-color: #ff0080;
+  box-shadow: 2px 2px 2px 2px ;
+  font-family: 'Stencil Std', fantasy;
+}
+#signInBtn{
+  background-color : #ff0080;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px 2px ;
+  font-family: 'Stencil Std', fantasy;
+
+}
+
 .card{
   padding:15px 30px 15px 30px;
   max-width:500px;
@@ -64,13 +76,13 @@ background : #eeff57;
   text-align: center;
   border-top: #ebf5d4 5px;
   margin-top: 20px;
-font-family: 'Stencil Std', fantasy;
-box-shadow: 10 10 10 8px #090a02;
-border-style: 3px inset rgba(13, 32, 39, 0.988) ;
-background-color: rgb(211, 3, 155);
-background-repeat: no-repeat, repeat;
-background-image: url("https://www.colourbox.com/preview/18145055-happy-face-background.jpg"), url("https://www.colourbox.com/preview/18145055-happy-face-background.jpg");
-background-blend-mode: lighten;
+  font-family: 'Stencil Std', fantasy;
+  box-shadow: 10 10 10 8px #090a02;
+  border-style: 3px inset rgba(13, 32, 39, 0.988) ;
+  background-color: rgb(211, 3, 155);
+  background-repeat: no-repeat, repeat;
+  background-image: url("https://www.colourbox.com/preview/18145055-happy-face-background.jpg"), url("https://www.colourbox.com/preview/18145055-happy-face-background.jpg");
+  background-blend-mode: lighten;
   } 
 button:focus {outline: none;}
 
@@ -101,10 +113,9 @@ h2 {
     background-color: hsl(340, 100%, 74%);
     border: 4px outset #f3ff88;
     padding: 10px;
-    font-family: 'Stencil Std', fantasy;
+    font-family: 'Permanent Marker', cursive;
     text-align: center;
-    // border-radius:5px;
-    box-shadow: 2px 4px 10px 2px #374bfc  ;
+    box-shadow: 2px 4px 10px 2px #374bfc;
 }
 
 #randomBtn{
@@ -115,7 +126,7 @@ h2 {
     box-shadow: 2px 2px 2px 2px ;
     padding:5px;
     border-radius: 5px;
-font-family: 'Stencil Std', fantasy;
+    font-family: 'Stencil Std', fantasy;
 }
 #deleteBtn{
   background-color: #f3f73b;
@@ -153,21 +164,20 @@ font-family: 'Stencil Std', fantasy;
 
 p{
   display: flex;
-  font-family: 'Stencil Std', fantasy;
+  font-family:  'Permanent Marker', cursive;
   font-size: 10px;
-  // border: solid 5px #000;
 }
 
 
  #kudoRead {
   display: flex;
   position: center;
-margin-top: 30px;
-  font-family: 'Stencil Std', fantasy;
-  font: rgb(248, 33, 212);
-  border:10px inset hsl(340, 100%, 74%);
-justify-content: center;
+  margin-top: 3px;
+  height: 40px;
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  border: 4px inset hsl(340, 100%, 74%);
+  justify-content: center;
   padding-top: 10px ;
-align-items: center;
-
+  align-items: center;
 }

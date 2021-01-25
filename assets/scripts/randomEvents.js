@@ -8,7 +8,7 @@ const ui = require("./ui")
 
 const randomizeKudos = function(event) {
   event.preventDefault()
-console.log('made it to random')
+// console.log('made it to random')
 api.getRandomKudos()
 .then(ui.randomKudoSuccess)
 .catch(ui.randomKudoFailure)
@@ -16,7 +16,7 @@ api.getRandomKudos()
 }
 const updateKudo = function (event){
   event.preventDefault()
-console.log('u made it friend')
+// console.log('u made it friend')
 const kudoData = getFormFields(event.target)
 // console.log(kudoData)
 api.updateKudo(kudoData)
@@ -25,7 +25,7 @@ api.updateKudo(kudoData)
 }
 const createNewKudo = function(event){
 event.preventDefault()
-console.log('getting there')
+// console.log('getting there')
 const kudoData = getFormFields(event.target)
 api.createKudo(kudoData)
 .then(ui.createKudoSuccess)
@@ -34,7 +34,7 @@ api.createKudo(kudoData)
 
 const indexKudos = function(event){
 event.preventDefault()
-console.log('yoooo')
+// console.log('yoooo')
 api.indexKudos()
 .then(ui.indexKudosSuccess)
   .catch(ui.indexKudosFailure)
@@ -49,9 +49,7 @@ const deleteKudo = function (event) {
 }
 
 module.exports = {
-  // randomizerMath,
-  // displayKudo,
-  // newRandomizer,
+ 
   randomizeKudos,
   updateKudo,
   createNewKudo,

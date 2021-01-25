@@ -2,7 +2,6 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../lib/get-form-fields')
-// const randomGen = require('./randomGen.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -22,7 +21,6 @@ const onSignIn = function (event) {
     .catch(ui.signInFailure)
 
 }
-
 const onChangePassword = function (event) {
   event.preventDefault()
 
@@ -43,9 +41,8 @@ const onSignOut = function (event) {
 
 
 module.exports = {
-onSignUp,
+  onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut,
-  // onRandomGen,
+  onSignOut
 }

@@ -15,6 +15,7 @@ const signInSuccess = function (response) {
   $('#getKudos').show()
   $('#getRandom').show()
   $('.posiBot').show()
+  $('.head2').hide()
   // console.log(store)
   store.user = response.user
 
@@ -33,11 +34,12 @@ const signInFailure = function (error) {
 const changePasswordSuccess = function () {
   $('.message').text('Change password success! :)')
   $('form').trigger('reset')
+
 }
 
 const changePasswordFailure = function (error) {
-  $('.message').text('Change password failed wit error: ' + error.responseJSON.message)
-  $('form').trigger('reset')
+$('.message').text('Change password failed wit error: ' + error.responseJSON.message)
+$('form').trigger('reset')
 }
 const signOutSuccess = function () {
   $('.message').text('sign out success! :)')
@@ -46,6 +48,7 @@ const signOutSuccess = function () {
   $('#getKudos').hide()
   $('#getRandom').hide()
   $('.posiBot').hide()
+  $('.head2').show()
   store.user = null
   $('form').trigger('reset')
 
@@ -115,7 +118,7 @@ const deleteKudoFailure = function () {
 $('form').trigger('reset')
 }
 // randomly generate a kudo from created array
-// usaing math.floor(math.random)
+// using math.floor(math.random)
 
 const randomKudoSuccess = function(responseObject) {
   // console.log(responseObject)
