@@ -4102,7 +4102,7 @@ var deleteKudoFailure = function deleteKudoFailure() {
   $('form').trigger('reset');
 };
 // randomly generate a kudo from created array
-// usaing math.floor(math.random)
+// using math.floor(math.random)
 
 var randomKudoSuccess = function randomKudoSuccess(responseObject) {
   // console.log(responseObject)
